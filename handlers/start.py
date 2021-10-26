@@ -43,13 +43,13 @@ async def start_(client: Client, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        "اضافه البوت اللي مجموعتك ⁦", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                         "!! 𝒂𝒉𝒎𝒆𝒅 𝒆𝒍𝒏𝒒𝒚𝒃 𖤐 ", url="https://t.me/ahmedelnqyb")
                 ],[
                     InlineKeyboardButton(
-                         "Updates", url="https://t.me/elnqyb_sp"
+                         "SUPPORT", url="https://t.me/semoelkber1"
                     ),
                     InlineKeyboardButton(
-                        "✯𝑫𝒆𝒗", url=f"https://t.me/{OWNER_NAME}")
+                        "SEMO", url=f"https://t.me/{OWNER_NAME}")
                 ],[
                     InlineKeyboardButton(
                         "GROUP", url=f"https://t.me/{GROUP_SUPPORT}"
@@ -58,7 +58,7 @@ async def start_(client: Client, message: Message):
                         "CHANNEL", url=f"https://t.me/{UPDATES_CHANNEL}")               
                  ],[
                     InlineKeyboardButton(
-                        "!! 𝒂𝒉𝒎𝒆𝒅 𝒆𝒍𝒏𝒒𝒚𝒃 𖤐 ", url="https://t.me/ahmedelnqyb"
+                        "اضافه البوت اللي مجموعتك ⁦", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ]
             ]
@@ -67,13 +67,13 @@ async def start_(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["start", f"start@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["start", f"start@{BOT_USERNAME}"، "بوت"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        f"""✔ **Bot online **\n<b>💫 **uptime:**</b> `{uptime}`""",
+        f"""✔ **البوت قيد التشغيل الان **\n<b>💫 **uptime:**</b> `{uptime}`""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -88,7 +88,7 @@ async def start(client: Client, message: Message):
         )
     )
 
-@Client.on_message(command("help") & filters.private & ~filters.edited)
+@Client.on_message(command(["help"، "الاوامر"]) & filters.private & ~filters.edited)
 async def help_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>• الاوامر 
@@ -180,7 +180,7 @@ async def help_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "Developer", url=f"https://t.me/ahmedelnqyb"
+                        "Developer", url=f"https://t.me/S_E_M_O_E_L_K_B_E_R"
                     )
                 ]
             ]
@@ -193,7 +193,7 @@ async def ping_pong(client: Client, message: Message):
     m_reply = await message.reply_text("ᴘɪɴɢɪɴɢ...")
     delta_ping = time() - start
     await m_reply.edit_text(
-        "🖱️ `ᴘᴏɴɢ!!`\n"
+        "🖱️ `سرعه الاستجابه`\n"
         f"♥️ `{delta_ping * 1000:.3f} ᴍs`"
     )
 
@@ -206,6 +206,6 @@ async def get_uptime(client: Client, message: Message):
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
         " ʙᴏᴛ sᴛᴀᴛᴜs:\n"
-        f"➤♥️ **ᴜᴘᴛɪᴍᴇ:** `{uptime}`\n"
+        f"➤♥️ **uptime:** `{uptime}`\n"
         f"➤♥️ **sᴛᴀʀᴛ ᴛɪᴍᴇ:** `{START_TIME_ISO}`"
     )
